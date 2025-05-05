@@ -10,7 +10,6 @@ async function query(queryObject) {
   } catch (error) {
     console.error(error);
     throw error;
-
   } finally {
     await client.end();
   }
@@ -38,7 +37,7 @@ export default {
 function getSSLValues() {
   if (process.env.POSTGRES_CA) {
     return {
-      ca: process.env.POSTGRES_CA
+      ca: process.env.POSTGRES_CA,
     };
   }
 
