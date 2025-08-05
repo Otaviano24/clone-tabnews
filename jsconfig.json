@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
+<<<<<<< HEAD
     "baseUrl": "."
+=======
+    "baseUrl": ".",
+    "types": []
+>>>>>>> 020067600e7c3be177efe21d50dd5af76610239e
   }
 }
