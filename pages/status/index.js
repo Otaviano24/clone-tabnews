@@ -52,6 +52,4 @@ function DatabaseStatus() {
       </>
     )
   }
-
-  return <div>Última atualização: {updatedAtText}</div>
 }
