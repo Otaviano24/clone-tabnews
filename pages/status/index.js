@@ -48,7 +48,6 @@ function DatabaseStatus() {
         </div>
       </>
     );
-
   }
   return (
     <>
