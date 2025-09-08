@@ -25,11 +25,10 @@ async function findOneByUsername(username) {
       throw new NotFoundError({
         message: "O username informado não foi encontrado no sistema.",
         action: "Verifique se o username está digitado corretamente.",
-      })
+      });
     }
 
     return results.rows[0];
-
   }
 }
 
@@ -56,10 +55,9 @@ async function create(userInputValues) {
     if (results.rowCount > 0) {
       throw new ValidationError({
         message: "O email informado já está sendo utilizado.",
-        action: "Utilize outro email para realizar o cadastro."
-      })
+        action: "Utilize outro email para realizar o cadastro.",
+      });
     }
-
   }
 
   async function validateUniqueUsername(username) {
@@ -78,10 +76,9 @@ async function create(userInputValues) {
     if (results.rowCount > 0) {
       throw new ValidationError({
         message: "O username informado já está sendo utilizado.",
-        action: "Utilize outro username para realizar o cadastro."
-      })
+        action: "Utilize outro username para realizar o cadastro.",
+      });
     }
-
   }
 
   async function runInsertQuery(userInputValues) {
@@ -94,7 +91,11 @@ async function create(userInputValues) {
         RETURNING
           *
           ;`,
-      values: [userInputValues.username, userInputValues.email, userInputValues.password],
+      values: [
+        userInputValues.username,
+        userInputValues.email,
+        userInputValues.password,
+      ],
     });
 
     return results.rows[0];
@@ -103,7 +104,7 @@ async function create(userInputValues) {
 
 const user = {
   create,
-  findOneByUsername
-}
+  findOneByUsername,
+};
 
 export default user;
