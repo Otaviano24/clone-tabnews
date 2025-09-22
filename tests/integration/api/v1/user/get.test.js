@@ -150,8 +150,8 @@ describe("GET /api/v1/user", () => {
 
       expect(responseBody).toEqual({
         name: "UnauthorizedError",
-        message: "Usuário não possui sessao ativa.",
-        action: "Verifique se este usuário esta logado e tente novamente.",
+        message: "Usuário não possui sessão ativa.",
+        action: "Verifique se este usuário está logado e tente novamente.",
         status_code: 401,
       });
     });
@@ -181,8 +181,8 @@ describe("GET /api/v1/user", () => {
 
       expect(responseBody).toEqual({
         name: "UnauthorizedError",
-        message: "Usuário não possui sessao ativa.",
-        action: "Verifique se este usuário esta logado e tente novamente.",
+        message: "Usuário não possui sessão ativa.",
+        action: "Verifique se este usuário está logado e tente novamente.",
         status_code: 401,
       });
     });
